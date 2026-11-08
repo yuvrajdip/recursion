@@ -16,6 +16,18 @@ int checkingPalindrome(int arr[], int l, int r, int res)
     return res * checkingPalindrome(arr, l + 1, r - 1, res);
 }
 
+//* checking a string or array with 2 parameter just
+bool isPalindrome(int i, string &s)
+{
+    int n = s.size();
+    if (i > s.size() / 2)
+        return true;
+    if (s[i] != s[n - i - 1])
+        return false;
+
+    return isPalindrome(i + 1, s);
+}
+
 void chkpalindrome(int n)
 {
     //*****     checking if a number is palindrome  *******/
@@ -59,16 +71,37 @@ void chkpalindrome(int n)
 int main()
 {
 
-    //* checking array or string palindrome using recursion
+    //* checking array palindrome using recursion
 
     int arr[] = {5, 0, 6, 0, 5};
 
     // int arr[] = {1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << checkingPalindrome(arr, 0, n - 1, 1) << endl;
+    if (checkingPalindrome(arr, 0, n - 1, 1) == 1)
+    {
+        cout << "Is Palindrome\n";
+    }
+    else
+    {
+        cout << "Not Palindrome\n";
+    }
 
-    // chkpalindrome(12021);
+    //* checking if a number is palindrome or not
+
+    chkpalindrome(12021);
+
+    //* checking if a string is Palindrome or not
+    string s = "MADAM";
+
+    if (isPalindrome(0, s) == true)
+    {
+        cout << "Palindromic String";
+    }
+    else
+    {
+        cout << "Non Palindromic string";
+    }
 
     return 0;
 }
