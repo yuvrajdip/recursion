@@ -74,7 +74,7 @@ void f1(int arr[], int total_size, int current_index)
     int n = total_size;
     int i = current_index;
 
-    if (i > n / 2)
+    if (i >= n / 2)
         return;
 
     //* swapping
