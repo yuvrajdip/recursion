@@ -68,14 +68,29 @@ void chkpalindrome(int n)
     }
 }
 
+//* reversing an array using recursion
+void f1(int arr[], int total_size, int current_index)
+{
+    int n = total_size;
+    int i = current_index;
+
+    if (i > n / 2)
+        return;
+
+    //* swapping
+    int temp = arr[i];
+    arr[i] = arr[n - 1 - i];
+    arr[n - 1 - i] = temp;
+
+    f1(arr, n, i + 1);
+}
+
 int main()
 {
 
-    //* checking array palindrome using recursion
+    //*****  checking array palindrome using recursion
 
     int arr[] = {5, 0, 6, 0, 5};
-
-    // int arr[] = {1};
     int n = sizeof(arr) / sizeof(arr[0]);
 
     if (checkingPalindrome(arr, 0, n - 1, 1) == 1)
@@ -87,11 +102,11 @@ int main()
         cout << "Not Palindrome\n";
     }
 
-    //* checking if a number is palindrome or not
+    //******  checking if a number is palindrome or not
 
     chkpalindrome(12021);
 
-    //* checking if a string is Palindrome or not
+    //*******  checking if a string is Palindrome or not
     string s = "MADAM";
 
     if (isPalindrome(0, s) == true)
@@ -102,6 +117,29 @@ int main()
     {
         cout << "Non Palindromic string";
     }
+    cout << endl;
+
+    //******  reversing array using recursion
+
+    int arr2[] = {2, 3, 1, 5};
+    int n1 = sizeof(arr2) / sizeof(arr2[0]);
+
+    //*  before traversing
+    for (int i = 0; i < n1; i++)
+    {
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+
+    f1(arr2, n1, 0); //* reversing the array
+
+    //* after reversing
+    for (int i = 0; i < n1; i++)
+    {
+        cout << arr2[i] << " ";
+    }
+
+    cout << endl;
 
     return 0;
 }
