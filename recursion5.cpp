@@ -2,6 +2,11 @@
 #include <cstdio>
 using namespace std;
 
+//* multiple recursion calls
+//* when multiple recursion call is called then the recursion calls or functions are called serially
+//* here fib(n-1) and all of fib(n-1)'s subfunctions will be called first, after finishing all fib(n-1)
+//* then fib(n-2) will be called
+
 //* fibonacci series using recursion
 int fib(int n)
 {

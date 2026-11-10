@@ -88,7 +88,7 @@ void f1(int arr[], int total_size, int current_index)
 int main()
 {
 
-    //*****  checking array palindrome using recursion
+    //***** Problem :  checking array palindrome using recursion
 
     int arr[] = {5, 0, 6, 0, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
@@ -102,11 +102,11 @@ int main()
         cout << "Not Palindrome\n";
     }
 
-    //******  checking if a number is palindrome or not
+    //****** Problem : checking if a number is palindrome or not
 
     chkpalindrome(12021);
 
-    //*******  checking if a string is Palindrome or not
+    //******* Problem:  checking if a string is Palindrome or not
     string s = "MADAM";
 
     if (isPalindrome(0, s) == true)
@@ -119,7 +119,7 @@ int main()
     }
     cout << endl;
 
-    //******  reversing array using recursion
+    //****** Problem : reversing array using recursion
 
     int arr2[] = {2, 3, 1, 5};
     int n1 = sizeof(arr2) / sizeof(arr2[0]);
